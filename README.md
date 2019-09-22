@@ -1,4 +1,4 @@
-# Machine Lerning
+# Machine Learning
 
 ### Gradient Descent -Explanation 
 ##### The methods for finding the maximum and minimum (extrema) of function have been created with developing of mathematical
