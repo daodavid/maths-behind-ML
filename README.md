@@ -7,7 +7,7 @@
 ##### one extremum,when the function has many local extrema the task become more difficult which can be solved by manipulationg the increase x step or so called 'learning rate'
 
 
-<a href='https://github.com/Daodavid93/Machine-Learning-first-steps/blob/master/Regresion%20Model/gradient%20descent.ipynb'> HERE<a>
+<a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Clasification/SVN/THEOREMS%20LINEAR%20DEPENDECY.ipynb'> HERE<a>
 
   
   
