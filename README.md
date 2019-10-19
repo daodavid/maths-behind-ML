@@ -6,8 +6,9 @@
 ##### used especially in machine learning.The algorithm is very simple and very convenient in case when the function has only
 ##### one extremum,when the function has many local extrema the task become more difficult which can be solved by manipulationg the increase x step or so called 'learning rate'
 
-
-<a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Clasification/SVN/THEOREMS%20LINEAR%20DEPENDECY.ipynb'> HERE<a>
+#### Regresion
+- <a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Regresion%20Model/gradient%20descent.ipynb'> Gradient Descent<a>
+- <a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Regresion%20Model/LinearRegression.ipynb'> Gradient Descent<a>  
 
   
   
