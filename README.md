@@ -8,3 +8,9 @@
 
 
 <a href='https://github.com/Daodavid93/Machine-Learning-first-steps/blob/master/Regresion%20Model/gradient%20descent.ipynb'> HERE<a>
+
+  
+  
+#### SVM  
+- <a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/Develop/Clasification/SVN/Lear%20dependecy.Deffs%20and%20Theorems.ipynb'> Linear dependecy theorems<a>
+- WoW
