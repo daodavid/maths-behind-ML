@@ -8,7 +8,7 @@
 
 #### Regresion
 - <a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Regresion%20Model/gradient%20descent.ipynb'> Gradient Descent<a>
-- <a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Regresion%20Model/LinearRegression.ipynb'> Gradient Descent<a>  
+- <a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Regresion%20Model/LinearRegression.ipynb'> Linear Regression<a>  
 
   
   
