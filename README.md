@@ -12,5 +12,5 @@
   
   
 #### SVM  
-- <a href='https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/Develop/Clasification/SVN/Lear%20dependecy.Deffs%20and%20Theorems.ipynb'> Linear dependecy theorems<a>
+- <a href='https://github.com/Daodavid93/Machine-Learning/blob/Develop/Clasification/SVN/THEOREMS%20LINEAR%20DEPENDECY.ipynb'> Linear dependecy theorems<a>
 - WoW
