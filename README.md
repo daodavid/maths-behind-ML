@@ -2,6 +2,7 @@
  
 
 ## Maths Method in Machine Learning  MMML
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
 - ![#c5f015]* *[Linear Dependence - Basic theorems and definitions](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Lear%20dependecy.Deffs%20and%20Theorems.ipynb)* `#c5f015`
 * *![#c5f015][Linear Tranformations-some examples and definitions](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Linear%20Transformation.ipynb)*
  * [Einvector and eingvalues - linear algebra example - hermitian opearators(symetric) -in Progress ](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Eigenvalues%20and%20Eigenvectors.ipynb)
