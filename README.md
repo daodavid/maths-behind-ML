@@ -1,7 +1,7 @@
 # Machine Learning 
-#### deep math explanation and examples 
+ 
 
-### Math Method in Machine Learning  MMML
+## Math Method in Machine Learning  MMML
  * [Linear Dependence - Basic theorems and definitions](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Lear%20dependecy.Deffs%20and%20Theorems.ipynb)
  * [Linear Tranformations-some examples and definitions](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Linear%20Transformation.ipynb)
  * [Einvector and eingvalues - linear algebra example - hermitian opearators(symetric) ](https://nbviewer.jupyter.org/github/Daodavid93/MachineLearning/blob/master/math/Eigenvalues%20and%20Eigenvectors.ipynb)
@@ -11,16 +11,16 @@
  * [Gradient Descent-numerical optimization](https://github.com/Daodavid93/Machine-Learning/blob/master/math/gradient%20descent.ipynb)
  
  
-<br> 
-### ML algorithms
+
+## ML algorithms
  * [Linear Regresion - explanation and example](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Regresion%20Model/LinearRegression.ipynb)
  * Logistic Regression
  * SVM
  * PCA
  
  
- <br>
- ### Some Projects and algorithms training
+
+ ## Some Projects and algorithms training
  * [Human Activity Predictions -SVM+PCA example](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/projects/Human-Activity-Project.ipynb)
  
 
