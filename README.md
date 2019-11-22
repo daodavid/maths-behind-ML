@@ -1,7 +1,7 @@
 # Machine Learning 
  
 
-## Math Method in Machine Learning  MMML
+## Maths Method in Machine Learning  MMML
  * [Linear Dependence - Basic theorems and definitions](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Lear%20dependecy.Deffs%20and%20Theorems.ipynb)
  * [Linear Tranformations-some examples and definitions](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Linear%20Transformation.ipynb)
  * [Einvector and eingvalues - linear algebra example - hermitian opearators(symetric) ](https://nbviewer.jupyter.org/github/Daodavid93/MachineLearning/blob/master/math/Eigenvalues%20and%20Eigenvectors.ipynb)
