@@ -11,13 +11,16 @@
  * [Gradient Descent-numerical optimization](https://github.com/Daodavid93/Machine-Learning/blob/master/math/gradient%20descent.ipynb)
  
  
+<br> 
 ### ML algorithms
  * [Linear Regresion - explanation and example](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/Regresion%20Model/LinearRegression.ipynb)
- *Logistic Regression
- *SVM
- *PCA
+ * Logistic Regression
+ * SVM
+ * PCA
  
- ### Some Projects and examples of training algorithms
+ 
+ <br>
+ ### Some Projects and algorithms training
  * [Human Activity Predictions -SVM+PCA example](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/projects/Human-Activity-Project.ipynb)
  
 
