@@ -7,8 +7,8 @@
  * [Einvector and eingvalues - linear algebra example - hermitian opearators(symetric) -in Progress ](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Eigenvalues%20and%20Eigenvectors.ipynb)
  * [Eingdecomposition - example of covariance componets composition with diagonalization in Progress](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Eigendecomposition%20of%20a%20covariance%20matrix.ipynb) 
  * [Taylor Approximation - Taylors series simple example and theorems](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Tailor%20approximation.ipynb)
- * [Langrange mutiplier - theorem](https://github.com/Daodavid93/Machine-Learning/blob/master/math/Langrange%20mutipliers.ipynb) 
- * [Gradient Descent-numerical optimization](https://github.com/Daodavid93/Machine-Learning/blob/master/math/gradient%20descent.ipynb)
+ * [Langrange mutiplier - theorem](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/Langrange%20mutipliers.ipynb) 
+ * [Gradient Descent-numerical optimization](https://nbviewer.jupyter.org/github/Daodavid93/Machine-Learning/blob/master/math/gradient%20descent.ipynb)
  
  
 
