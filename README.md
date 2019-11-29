@@ -1,7 +1,7 @@
 # Machine Learning 
  
 
-## Maths Method in Machine Learning  MMML
+## Math Methods in Machine Learning  MMML
 
 * *[Linear Dependence - Basic theorems and definitions](https://daodavid93.github.io/Machine-Learning/pages/Linear-Algebra/THEOREMS%20LINEAR%20DEPENDECY.html)* 
 * *[Linear operator ,Linear Transformation](https://daodavid93.github.io/Machine-Learning/pages/Linear-Algebra/Linear%20operator%20and%20linear%20tranformations.html)*
