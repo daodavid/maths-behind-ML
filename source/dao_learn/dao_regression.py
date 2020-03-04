@@ -63,9 +63,9 @@ class DaoBinaryRegression(DaoRegression):
         
         
         
-    def sigmoid(self):
-        
-        return 1/(1.0+np.exp(-(a*x_data+b)))
+    def sigmoid(coef,intecept,x):
+        z = coef*x + intecept
+        return 1/(1.0+np.exp(-z))
     
     
 #print(np.array([[1,2,3],[2,3,4]]).shape)    
