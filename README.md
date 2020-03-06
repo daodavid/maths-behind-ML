@@ -14,11 +14,11 @@
  
  
 
-## Machine learning.Classic methods.
+## Classical methods in  machine learning.
  1. **Linear Regresion**
     * **[Exploration of Linear Regression](https://daodavid93.github.io/Machine-Learning/source/html/ML/LinearRegression.html)**
  
- 2. **Logistic Regression**
+ 2. ***Logistic Regression***
     * **[Sigmoid function. Ratio Odds. Log Odds. Math proof of the origin of sigmoid.](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Cross-entropy%20function.Investigation%20and%20gradient%20descent.html)**
     * **[Investigation of Cross-entropy function. Math proof of formula of gradient descent over Cross-entropy. Mathеmaticaly resolved.](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Cross-entropy%20function.Investigation%20and%20gradient%20descent.html)**
  3. *Support Vector Machine* 
