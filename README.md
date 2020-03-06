@@ -19,6 +19,7 @@
  
  2. Logistic Regression
     * [Sigmoid ,Ratio Odds,log Odds.The origin of sigmoid](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Cross-entropy%20function.Investigation%20and%20gradient%20descent.html)
+    * *[Linear Dependence - Basic theorems and definitions](https://daodavid93.github.io/Machine-Learning/pages/Linear-Algebra/THEOREMS%20LINEAR%20DEPENDECY.html)* 
      
    * [Cross-entropy function.Investigation ,appling gradient descent in optimization](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Sigmoid %2Cratio odds%2Clog odd.The origin of sigmoid.html)
  
