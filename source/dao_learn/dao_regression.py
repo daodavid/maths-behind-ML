@@ -70,5 +70,5 @@ class DaoBinaryRegression(DaoRegression):
     
 #print(np.array([[1,2,3],[2,3,4]]).shape)    
 a = np.array([[1,2,3],[2,3,4]])
-c=a[1].dot(c)
-print(c)
+b = a.dot(np.array([1,2,3]))
+print(b[1])
