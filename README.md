@@ -1,4 +1,4 @@
-# Machine Learning 
+
  
 
 ## Math Methods in Machine Learning  MMML
@@ -15,8 +15,10 @@
  
 
 ## ML algorithms
- * [Linear Regresion - explanation and example](https://daodavid93.github.io/Machine-Learning/pages/ML/LinearRegression.html)
- * Logistic Regression
+ - [Linear Regresion - explanation and example](https://daodavid93.github.io/Machine-Learning/source/html/ML/LinearRegression.html)
+ - Logistic Regression
+   *[Sigmoid ,Ratio Odds,log Odds.The origin of sigmoid](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Cross-entropy function.Investigation and gradient descent.html)
+    *[Cross-entropy function.Investigation ,appling gradient descent in optimization](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Sigmoid %2Cratio odds%2Clog odd.The origin of sigmoid.html)
  * SVM
  * PCA
  
