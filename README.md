@@ -19,8 +19,8 @@
     * *[Linear Regresion - explanation and example](https://daodavid93.github.io/Machine-Learning/source/html/ML/LinearRegression.html)*
  
  2. Logistic Regression
-    * *[Sigmoid ,Ratio Odds,log Odds.The origin of sigmoid](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Cross-entropy%20function.Investigation%20and%20gradient%20descent.html)*
-    * *[Cross-entropy function.Investigation ,appling gradient descent in optimization](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Sigmoid %2Cratio odds%2Clog odd.The origin of sigmoid.html)*
+    * *[Sigmoid function.Ratio Odds.log Odds.The origin of sigmoid .Math proof](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Cross-entropy%20function.Investigation%20and%20gradient%20descent.html)*
+    * *[Investigation of Cross-entropy function. Problem of gradient descent in the optimization  problem. Mathеmaticaly resolved.](https://daodavid93.github.io/Machine-Learning/source/html/ML/logistic-regression/Cross-entropy%20function.Investigation%20and%20gradient%20descent.html)*
  3. SVM
  4. PCA
  
