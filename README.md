@@ -1,4 +1,4 @@
-<h1> Machine Learning </h1>   
+<h1 face = "Times New Roma" color='#3f134f'> Machine Learning </h1>   
 
 
 <h5 style="background-color:#E8FAFA">
