@@ -1,14 +1,14 @@
 <h1> Machine Learning </h1>   
 
 
-<h5>
-  <font  face = "Times New Roma" color='#3f134f' > 
+<h2 style="background-color:#E8FAFA">
+  <font   face = "Times New Roma" color='#3f134f' > 
     <ul size="4" style="margin-left: 30px">
       <li><a href='https://github.com/daodavid/Machine-Learning/tree/gh-pages/notebooks/Math'>Math </a> 
         <br>
            <ul size="2">
              <li><a  href='#reg'>Mathematical Analysis</a> </li>    
-             <li><a  href='#reg'>Statistic</a> </li>
+           <body style="background-color:grey;">  <li><a  href='#reg'>Statistic</a> </li>
            </ul>  
       </li>
       <br>
@@ -33,4 +33,4 @@
      </li>
    </ul> 
  </font>
-</h5>
+</h2>
