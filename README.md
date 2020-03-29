@@ -1,7 +1,7 @@
 <h1> Machine Learning </h1>   
 
 
-<h3>
+<h5>
   <font  face = "Times New Roma" color='#3f134f' > 
     <ul size="4" style="margin-left: 30px">
       <li><a href='https://github.com/daodavid/Machine-Learning/tree/gh-pages/notebooks/Math'>Math </a> 
@@ -33,4 +33,4 @@
      </li>
    </ul> 
  </font>
-</h3>
+</h5>
