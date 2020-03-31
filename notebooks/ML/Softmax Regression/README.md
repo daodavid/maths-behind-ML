@@ -6,7 +6,7 @@
  <br> <br>
 <h2>
    <font size="5" face = "Times New Roma" color='#270336'>
-     The minimization Cross-entropy Loss used in Softmax regression 
+     The minimization of Cross-entropy Loss used in Softmax regression 
    </font> 
  </h2>
  
