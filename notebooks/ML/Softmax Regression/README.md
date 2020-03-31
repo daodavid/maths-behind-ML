@@ -3,12 +3,14 @@
      Softmax regression 
    </font> 
  </h1>
- 
-<h1>
+ <br> <br>
+<h2>
    <font size="5" face = "Times New Roma" color='#270336'>
      The minimization Cross-entropy Loss used in Softmax regression 
    </font> 
- </h1>
+ </h2>
+ 
+ 
 <h6>
 
 
@@ -21,22 +23,22 @@
 <br>
   <font size="4" face = "Times New Roma" color='#3f134f' > 
     <ul style="margin-left: 30px">
-      <li><a href='https://daodavid.github.io/Machine-Learning/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss.html#deff_softmax'>What is Softmaxt  and  how it works?</a></li>
+      <li><a href='https://daodavid.github.io/maths-behind-ML/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss%20.html#deff_softmax'>What is Softmaxt  and  how it works?</a></li>
         <br>
-      <li><a href='https://daodavid.github.io/Machine-Learning/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss.html#cross_entropy'>Definition of Cross-entropy Loss</a></li>
+      <li><a href='https://daodavid.github.io/maths-behind-ML/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss%20.html#cross_entropy'>Definition of Cross-entropy Loss</a></li>
         <br>  
-      <li><a href='https://daodavid.github.io/Machine-Learning/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss.html#optimization'>Optimization of softmax by Cross-entropy Loss and derivation of Gradient descent formula </a> </li>
+      <li><a href='https://daodavid.github.io/maths-behind-ML/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss%20.html#optimization'>Optimization of softmax by Cross-entropy Loss and derivation of Gradient descent formula </a> </li>
         <br>
-       <li><a href='https://daodavid.github.io/Machine-Learning/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss.html#gradient'>Implementation of Gradient descent algorithm </a> </li>
+       <li><a href='https://daodavid.github.io/maths-behind-ML/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss%20.html#gradient'>Implementation of Gradient descent algorithm </a> </li>
         <br> 
-      <li><a href='https://daodavid.github.io/Machine-Learning/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss.html#reg'>Regularization of gradient descent by learning rate and max iterations</a></li><br>     
+      <li><a href='https://daodavid.github.io/maths-behind-ML/pages/html/ML/softmax-regression/The%20optimization%20of%20Softmax%20function%20by%20%20Cross-entropy%20Loss%20.html#reg'>Regularization of gradient descent by learning rate and max iterations</a></li><br>     
 </ul>    
 </font>
 </h6> 
-<h3>
-   <font size="3" face = "Times New Roma" color='#270336'>
+
+   <font face = "Times New Roma" size="3"  color='#270336' style="margin-right: 45px; margin-left: 45px">
  Step by step from math to implementation of multi-class classification.That could be used as a guide for implementation of logistic regression and some notes related to optimization could be useful for neural networks
     </font>
-</h3>    
+   
     
     
