@@ -2,7 +2,8 @@
 
 <h2>Maths</h2>
    <ul size="2">
-             <li><a  href='#reg'>Mathematical Analysis - in Progress</a> </li>    
+            <li><a  href='/notebooks/Math/Linear Algebra'>Linear Algebra- in Progress</a> </li>
+             <li><a  href='/notebooks/Math/Mathematical analysis'>Mathematical Analysis - in Progress</a> </li>    
              <li><a  href='/notebooks/Math/Probability and Statistic/'>Probability and Statistic - in Progress</a> </li>
    </ul>  
 
@@ -14,6 +15,7 @@
       <li><a href='/notebooks/ML/Linear%20Regression'>Linear Regression - in Progress</a></li>
       <li><a href='/notebooks/ML/Logistic%20Regression'>Logistic Regression - - in Progress </a></li>
       <li><a href='/notebooks/ML/Softmax%20Regression'>Softmax regression</a></li>
+      <li><a href='/notebooks/ML/Principal Component Analysis'>Priciple Component Analisys</a></li>
    </ul> 
  </font>
 
