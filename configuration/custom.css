@@ -1,0 +1,76 @@
+#notebook-container {
+    padding: 15px;
+    background-color: #fff;
+    min-height: 0;
+    -webkit-box-shadow: 0px 0px 12px 1px rgb(87 87 87 / 20%);
+    box-shadow: 0px 0px 12px 1px rgb(87 87 87 / 20%);
+    background-image: url(http://4.bp.blogspot.com/-OpFqYklSD-k/UQcCXvRs9UI/AAAAAAAAQs8/uD3Mc7RhLl4/s1600/Chalkboard-background.jpg);
+}
+.topic {
+    font-size: 50px;
+    font-family: Times New Roma;
+    color: #cacae0;
+    /* background-color: #ccccd2; */
+    margin: 40px;
+    padding: 40px;
+    font-family: cursive;
+}
+
+p {
+    margin: 0 0 9px;
+    color: #e7e8ff;
+    font-size: 20px;
+    font-family: cursive;
+}
+h1, .h1, h2, .h2, h3, .h3, .h4 {
+    margin-top: 18px;
+    margin-bottom: 9px;
+    color: #ccc;
+}
+
+table {
+    background-color: #adadad;
+}
+div.output_area pre {
+    padding: 1px 0 1px 0;
+    border: 0;
+    vertical-align: baseline;
+    color: #e6e6e6;
+    background-color: white;
+    border-radius: 0;
+    font-family: cursive;
+    font-size: 15px;
+}
+
+.subtopic {
+    font-size: 20px;
+    font-family: Times New Roma;
+    color: #0d1250;
+    background-color: #ccccd2;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
+}
+.intro {
+  background-color: tomato;
+  font-family: Times New Roma;
+  border: 2px solid black;
+  margin: 40px;
+  padding: 40px;
+}
+
+.comment {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-family: Times New Roma;
+    color: #0d1250; 
+}
+.math2 {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-family: Times New Roma;
+    color: #0d1250; 
+    background-image: url("https://p0.pikist.com/photos/309/523/black-board-chalk-traces-school-learn-education-smeared-writing-board-teaching-thumbnail.jpg");
+}
+
+  
