@@ -48,7 +48,7 @@ div.output_area pre {
     padding: 1px 0 1px 0;
     border: 0;
     vertical-align: baseline;
-    color: black;
+    color: #e6e6e6;
     font-style: italic;
     border-radius: 0;
     background-image: url(http://4.bp.blogspot.com/-OpFqYklSD-k/UQcCXvRs9UI/AAAAAAAAQs8/uD3Mc7RhLl4/s1600/Chalkboard-background.jpg);
@@ -70,7 +70,6 @@ element.style {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-<style>
 .CodeMirror pre {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
@@ -91,6 +90,79 @@ element.style {
     -webkit-font-variant-ligatures: contextual;
     font-variant-ligatures: contextual;
     color: white;
+}
+div.input_prompt {
+    color: #e6e6e6;
+    border-top: 1px solid transparent;
+}
+.rendered_html h1:first-child {
+    margin-top: 0.538em;
+    margin-left: 20px;
+    font-size: 34px;
+    color: #bdbdbd;
+}
+.cm-s-default .cm-header{
+    color: #e6e6e6;
+}
+.rendered_html h4:first-child {
+    margin-top: 1em;
+    color: #f1eceb;
+    font-family: Times New Roman;
+    font-size: 20px;
+    font-style: italic;
+}
+.rendered_html h3 {
+    font-size: 128.6%;
+    margin: 1.55em 0 0 0;
+    font-weight: bold;
+    line-height: 1.0;
+    font-size: 22px;
+    font-family: sans-serif;
+}
+.rendered_html h2 {
+    font-size: 128.6%;
+    margin: 1.55em 0 0 0;
+    font-weight: bold;
+    line-height: 1.0;
+    font-size: 22px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+.cm-text {
+ color: #f1eceb;
+}
+.CodeMirror-cursor {
+    border-left: 1.4px solid #e6e6e6;
+}
+.CodeMirror-cursors {
+    border-left: 1.4px solid #e6e6e6;
+}
+.cm-s-default .cm-atom {
+    color: #f7f7f7;
+}
+
+element.style {
+}
+div.output_text {
+    text-align: left;
+    color: #e6e6e6;
+    line-height: 1.21429em;
+    font-size: 20px;
+}
+.rendered_html h5 {
+    font-size: 100%;
+    margin: 2em 0 0 0;
+    font-weight: bold;
+    line-height: 1.0;
+    font-style: italic;
+    color: #e6e6e6;
+    font-size: 15px;
+}
+.rendered_html h1:first-child {
+    margin-top: 0.538em;
+    margin-left: 20px;
+    font-size: 38px;
+    color: #ffffff;
 }
 
 
