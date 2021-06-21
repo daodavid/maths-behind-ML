@@ -1,4 +1,5 @@
 ```python
+$ e^{i \pi} + 1 = 0 $
 %matplotlib inline
 import matplotlib.pyplot as plt
 import numpy as np
