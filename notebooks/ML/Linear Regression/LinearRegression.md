@@ -1,10 +1,7 @@
 ```python
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
 
 
+$'E=mc^2'$
 %matplotlib inline
 import matplotlib.pyplot as plt
 import numpy as np
