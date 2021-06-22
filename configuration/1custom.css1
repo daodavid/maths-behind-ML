@@ -1,0 +1,185 @@
+#notebook-container {
+    padding: 15px;
+    background-color: #fff;
+    min-height: 0;
+    -webkit-box-shadow: 0px 0px 12px 1px rgb(87 87 87 / 20%);
+    box-shadow: 0px 0px 12px 1px rgb(87 87 87 / 20%);
+    background-image: url(http://4.bp.blogspot.com/-OpFqYklSD-k/UQcCXvRs9UI/AAAAAAAAQs8/uD3Mc7RhLl4/s1600/Chalkboard-background.jpg);
+}
+.cm-s-ipython span.cm-keyword {
+    color: #008000;
+    font-weight: bold;
+}
+.cm-s-ipython span.cm-def {
+    color: #decaca;
+}
+.cm-s-ipython span.cm-variable {
+    color: #ddd;
+}
+.cm-s-ipython span.cm-property {
+    color: #adeaf1;
+}
+p {
+    margin: 0 0 9px;
+    color: #769bbb;
+    font-size: 22px;
+    font-style: oblique;
+    font-family: fangsong;
+}
+table {
+    background-color: #adadad;
+}
+div.output_area pre {
+    margin: 0;
+    padding: 1px 0 1px 0;
+    border: 0;
+    vertical-align: baseline;
+    color: #e6e6e6;
+    font-style: italic;
+    border-radius: 0;
+    background-image: url(http://4.bp.blogspot.com/-OpFqYklSD-k/UQcCXvRs9UI/AAAAAAAAQs8/uD3Mc7RhLl4/s1600/Chalkboard-background.jpg);
+}
+.CodeMirror {
+    line-height: 1.21429em;
+    font-size: 15px;
+    height: auto;
+    background: none;
+    color: white;
+    background-image: url(http://4.bp.blogspot.com/-OpFqYklSD-k/UQcCXvRs9UI/AAAAAAAAQs8/uD3Mc7RhLl4/s1600/Chalkboard-background.jpg);
+}
+
+element.style {
+    padding-right: 0.1px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.CodeMirror pre {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-width: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    white-space: pre;
+    word-wrap: normal;
+    line-height: inherit;
+    color: inherit;
+    z-index: 2;
+    position: relative;
+    overflow: visible;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-variant-ligatures: contextual;
+    font-variant-ligatures: contextual;
+    color: white;
+}
+div.input_prompt {
+    color: #e6e6e6;
+    border-top: 1px solid transparent;
+}
+.rendered_html h1:first-child {
+    margin-top: 0.1638em;
+    margin-left: 250px;
+    font-size: 68px;
+    color: #d8d5ca;
+
+}
+.cm-s-default .cm-header{
+    color: #e6e6e6;
+}
+.rendered_html h1:first-child {
+    margin-top: 0.638em;
+    margin-left: 150px;
+    font-size: 58px;
+    color: #8958ff;
+}
+.rendered_html h3 {
+    margin: 1.55em 0 0 0;
+    font-weight: bold;
+    line-height: 1.0;
+    font-family: fangsong;
+    font-size: 26px;
+    color: #d8d5ca;
+
+}
+.rendered_html h2 {
+    font-size: 128.6%;
+    margin: 1.85em 0 0 0;
+    font-weight: bold;
+    line-height: 1.0;
+    font-size: 22px;
+    font-family: fangsong;
+    font-size: 33px;
+    color: #d8d5ca
+}
+.cm-text {
+ color: #f1eceb;
+}
+.CodeMirror-cursor {
+    border-left: 1.4px solid #e6e6e6;
+}
+.CodeMirror-cursors {
+    border-left: 1.4px solid #e6e6e6;
+}
+.cm-s-default .cm-atom {
+    color: #f7f7f7;
+}
+
+element.style {
+}
+div.output_text {
+    text-align: left;
+    color: #e6e6e6;
+    line-height: 1.21429em;
+    font-size: 20px;
+}
+.rendered_html h5 {
+    font-size: 100%;
+    margin: 2em 0 0 0;
+    font-weight: bold;
+    line-height: 1.0;
+    font-style: italic;
+    color: #e6e6e6;
+    font-size: 15px;
+}
+.text_cell.rendered .rendered_html {
+    overflow-x: auto;
+    overflow-y: hidden;
+    color: #b8d6e8;
+    font-style: oblique;
+    font-family: fangsong;
+}
+.jp-Notebook {
+    padding: var(--jp-notebook-padding);
+    outline: none;
+    overflow: auto;
+    background: var(--jp-layout-color0);
+    background-image: url(http://4.bp.blogspot.com/-OpFqYklSD-k/UQcCXvRs9UI/AAAAAAAAQs8/uD3Mc7RhLl4/s1600/Chalkboard-background.jpg);
+}
+.CodeMirror pre {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-width: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 17px;
+    margin: 0;
+    white-space: pre;
+    word-wrap: normal;
+    line-height: inherit;
+    color: inherit;
+    z-index: 2;
+    position: relative;
+    overflow: visible;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-variant-ligatures: contextual;
+    font-variant-ligatures: contextual;
+    color: #100303eb;
+    background-color: beige;
+}
+  
