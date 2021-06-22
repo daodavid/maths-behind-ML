@@ -1,4 +1,7 @@
 ```python
+
+
+$'E=mc^2'$
 %matplotlib inline
 import matplotlib.pyplot as plt
 import numpy as np
