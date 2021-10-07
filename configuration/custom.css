@@ -1,8 +1,13 @@
 p {
-    margin-bottom: 0;
     font-size: 20px;
     font-family: cursive;
-    color: #080752;
-    background-color: #fbf8f8;
-    text-shadow: 2px 2px 5px #d3c9f5;
+    color: #170e64;
+    background-color: #ededed;
+    text-shadow: 2px 4px 2px #dedce7;
+}
+h1,h2 {
+    font-family: "Times New Roman", Times, serif;
+    color: #edecff;
+    background-color: #58758d;
+    text-shadow: 6px 4px 4px #e1d5d5;
 }
