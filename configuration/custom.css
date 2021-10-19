@@ -1,13 +1,20 @@
-p {
-    font-size: 20px;
-    font-family: cursive;
-    color: #170e64;
-    background-color: #ededed;
-    text-shadow: 2px 4px 2px #dedce7;
-}
-h1,h2 {
+h1, h2 {
     font-family: "Times New Roman", Times, serif;
-    color: #edecff;
-    background-color: #58758d;
-    text-shadow: 6px 4px 4px #e1d5d5;
+    color: #f0f0f5;
+    background-color: #73797e;
+    text-shadow: 20px -4px 11px #e1d5d5;
+}
+p {
+    font-size: 15px;
+    font-family: cursive;
+    color: #171818;
+}
+.jp-Notebook {
+    padding: var(--jp-notebook-padding);
+    outline: none;
+    overflow: auto;
+    background: #10100912 !important;
+}
+.jp-CodeConsole .CodeMirror.cm-s-jupyter, .jp-Notebook .CodeMirror.cm-s-jupyter {
+    background: #73797e45;
 }
