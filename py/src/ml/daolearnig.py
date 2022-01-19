@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 data = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
 print(data.head())
