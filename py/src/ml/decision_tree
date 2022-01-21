@@ -123,7 +123,7 @@ def categorical_options(a):
 
   return opciones[1:-1]
 
-def max_information_gain_split(x, y,z, func=entropy):
+def max_information_gain_split(x, y, func=entropy):
   '''
   Given a predictor & target variable, returns the best split, the error and the type of variable based on a selected cost function.
   x: predictor variable as Pandas Series.
@@ -159,7 +159,7 @@ def max_information_gain_split(x, y,z, func=entropy):
     best_ig = max(ig)
     best_ig_index = ig.index(best_ig)
     best_split = split_value[best_ig_index]
-    return(best_ig,best_split,numeric_variable, True)
+    return  (best_ig,best_split,numeric_variable, True)
 
 
 #weight_ig, weight_slpit, _, _ = max_information_gain_split(data['Weight'], data['obese'],)
@@ -171,8 +171,167 @@ def max_information_gain_split(x, y,z, func=entropy):
 # )
 
 
-k = data.drop('obese', axis= 1).apply(max_information_gain_split, y = data['obese'] ,z=1)
+k = data.drop('obese', axis= 1).apply(max_information_gain_split, y = data['obese'])
 
 print(k)
 
+print(type(k))
 
+
+def get_best_split(y, data):
+  '''
+  Given a data, select the best split and return the variable, the value, the variable type and the information gain.
+  y: name of the target variable
+  data: dataframe where to find the best split.
+  '''
+  masks = data.drop(y, axis= 1).apply(max_information_gain_split, y = data[y])
+  if sum(masks.loc[3,:]) == 0:
+    return(None, None, None, None)
+
+  else:
+    # Get only masks that can be splitted
+    masks = masks.loc[:,masks.loc[3,:]]
+
+    # Get the results for split with highest IG
+    split_variable = max(masks)
+    #split_valid = masks[split_variable][]
+    split_value = masks[split_variable][1]
+    split_ig = masks[split_variable][0]
+    split_numeric = masks[split_variable][2]
+
+    return(split_variable, split_value, split_ig, split_numeric)
+
+
+def make_split(variable, value, data, is_numeric):
+  '''
+  Given a data and a split conditions, do the split.
+  variable: variable with which make the split.
+  value: value of the variable to make the split.
+  data: data to be splitted.
+  is_numeric: boolean considering if the variable to be splitted is numeric or not.
+  '''
+  if is_numeric:
+    data_1 = data[data[variable] < value]
+    data_2 = data[(data[variable] < value) == False]
+
+  else:
+    data_1 = data[data[variable].isin(value)]
+    data_2 = data[(data[variable].isin(value)) == False]
+
+  return(data_1,data_2)
+
+
+def make_prediction(data, target_factor):
+  '''
+  Given the target variable, make a prediction.
+  data: pandas series for target variable
+  target_factor: boolean considering if the variable is a factor or not
+  '''
+
+  # Make predictions
+  if target_factor:
+    pred = data.value_counts().idxmax()
+  else:
+    pred = data.mean()
+
+  return pred
+
+
+
+def train_tree(data,y, target_factor, max_depth = None,min_samples_split = None, min_information_gain = 1e-20, counter=0, max_categories = 20):
+  '''
+  Trains a Decission Tree
+  data: Data to be used to train the Decission Tree
+  y: target variable column name
+  target_factor: boolean to consider if target variable is factor or numeric.
+  max_depth: maximum depth to stop splitting.
+  min_samples_split: minimum number of observations to make a split.
+  min_information_gain: minimum ig gain to consider a split to be valid.
+  max_categories: maximum number of different values accepted for categorical values. High number of values will slow down learning process. R
+  '''
+
+  # Check that max_categories is fulfilled
+  if counter==0:
+    types = data.dtypes
+    check_columns = types[types == "object"].index
+    for column in check_columns:
+      var_length = len(data[column].value_counts())
+      if var_length > max_categories:
+        raise ValueError('The variable ' + column + ' has '+ str(var_length) + ' unique values, which is more than the accepted ones: ' +  str(max_categories))
+
+  # Check for depth conditions
+  if max_depth == None:
+    depth_cond = True
+
+  else:
+    if counter < max_depth:
+      depth_cond = True
+
+    else:
+      depth_cond = False
+
+  # Check for sample conditions
+  if min_samples_split == None:
+    sample_cond = True
+
+  else:
+    if data.shape[0] > min_samples_split:
+      sample_cond = True
+
+    else:
+      sample_cond = False
+
+  # Check for ig condition
+  if depth_cond & sample_cond:
+
+    var,val,ig,var_type = get_best_split(y, data)
+
+    # If ig condition is fulfilled, make split
+    if ig is not None and ig >= min_information_gain:
+
+      counter += 1
+
+      left,right = make_split(var, val, data,var_type)
+
+      # Instantiate sub-tree
+      split_type = "<=" if var_type else "in"
+      question =   "{} {}  {}".format(var,split_type,val)
+      # question = "\n" + counter*" " + "|->" + var + " " + split_type + " " + str(val)
+      subtree = {question: []}
+
+
+      # Find answers (recursion)
+      yes_answer = train_tree(left,y, target_factor, max_depth,min_samples_split,min_information_gain, counter)
+
+      no_answer = train_tree(right,y, target_factor, max_depth,min_samples_split,min_information_gain, counter)
+
+      if yes_answer == no_answer:
+        subtree = yes_answer
+
+      else:
+        subtree[question].append(yes_answer)
+        subtree[question].append(no_answer)
+
+    # If it doesn't match IG condition, make prediction
+    else:
+      pred = make_prediction(data[y],target_factor)
+      return pred
+
+   # Drop dataset if doesn't match depth or sample conditions
+  else:
+    pred = make_prediction(data[y],target_factor)
+    return pred
+
+  return subtree
+
+
+max_depth = 5
+min_samples_split = 20
+min_information_gain  = 1e-5
+
+
+
+decisiones = train_tree(data,'obese',True, max_depth,min_samples_split,min_information_gain)
+
+
+print(decisiones)
