@@ -1,0 +1,71 @@
+import numpy as np
+import pandas as pd
+import collections
+
+
+def entropy(y):
+    """ Entropy measures the degree of uncertainty,
+     impurity or disorder of a random variable
+
+    :param target: (list) target values
+    :return: (float)  entropy of the array
+    """
+
+    counter = collections.Counter(y)
+    p = np.array(list(counter.values())) / len(y)
+    return -np.sum(p * np.log2(p))
+
+
+def information_gain(y, mask, func=entropy):
+    """Information gain is used for determining the best
+    features/attributes that render maximum information about a class.
+
+    :param y: (list) target values
+    :param mask:(list of booleans) used for splitting the data
+    :param func: (function) function for measurements of impurity/uncertainty
+    :return: (float) Information Gain
+    """
+    if isinstance(y, pd.Series):
+        y_right = y[mask]
+        y_left = y[-mask]
+        size = len(y)
+        w_right, w_left = len(y_right / size), len(y_left / size)
+        return entropy(y) - (w_right * entropy(y_right) + w_left * w_left)
+
+    else:
+        raise TypeError("y must be a Pandas Series")
+
+
+class DecisionTree:
+
+    def __init__(self):
+        pass
+
+    def train(self, x, y):
+        columns = df.columns.values.tolist()
+        for c in columns:
+            k = x[c]
+            for i in k:
+                pass
+
+
+
+    def predict(self, x):
+        pass
+
+    def accuracy(self, x, y):
+        pass
+
+
+A = np.array([1, 2, 3])
+
+x = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
+columns = x.columns.values.tolist()
+columns = x.drop('obese'.columns.values.tolist()
+for c in columns:
+    k = x[c]
+    if k.dtypes == "int64":
+        values = k.unique()
+        for i in values:
+            mask = k<i
+            i_g = information_gain()

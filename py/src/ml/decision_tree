@@ -334,4 +334,30 @@ min_information_gain  = 1e-5
 decisiones = train_tree(data,'obese',True, max_depth,min_samples_split,min_information_gain)
 
 
-print(decisiones)
+def clasificar_datos(observacion, arbol):
+  question = list(arbol.keys())[0]
+
+  if question.split()[1] == '<=':
+
+    if observacion[question.split()[0]] <= float(question.split()[2]):
+      answer = arbol[question][0]
+    else:
+      answer = arbol[question][1]
+
+  else:
+
+    if observacion[question.split()[0]] in (question.split()[2]):
+      answer = arbol[question][0]
+    else:
+      answer = arbol[question][1]
+
+  # If the answer is not a dictionary
+  if not isinstance(answer, dict):
+    return answer
+  else:
+    residual_tree = answer
+    return clasificar_datos(observacion, answer)
+
+
+x = data.drop('obese',axis=1)
+clasificar_datos(x,decisiones)Index
