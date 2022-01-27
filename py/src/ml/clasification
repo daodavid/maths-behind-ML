@@ -29,12 +29,33 @@ def information_gain(y, mask, func=entropy):
         y_right = y[mask]
         y_left = y[-mask]
         size = len(y)
-        w_right, w_left = len(y_right / size), len(y_left / size)
+        w_right, w_left = len(y_right) / size, len(y_left) / size
         return entropy(y) - (w_right * entropy(y_right) + w_left * w_left)
 
     else:
         raise TypeError("y must be a Pandas Series")
 
+
+def best_split(series, target_value,func=entropy):
+     values = series.unique()
+     inf_gain_values = []
+     feature_values = []
+
+     for val in values:
+         mask = series < val
+         i_g = information_gain(target_value,mask,func=entropy)
+         inf_gain_values.append(i_g)
+         feature_values.append(val)
+
+
+     max_inf_gain = np.max(inf_gain_values)
+     index = inf_gain_values.index(max_inf_gain)
+     best_feature_value = feature_values[index]
+
+     return best_feature_value,max_inf_gain
+
+
+# def max_information_gain()
 
 class DecisionTree:
 
@@ -42,13 +63,7 @@ class DecisionTree:
         pass
 
     def train(self, x, y):
-        columns = df.columns.values.tolist()
-        for c in columns:
-            k = x[c]
-            for i in k:
-                pass
-
-
+        feature, value = best_split(x, y)
 
     def predict(self, x):
         pass
@@ -59,13 +74,23 @@ class DecisionTree:
 
 A = np.array([1, 2, 3])
 
-x = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
-columns = x.columns.values.tolist()
-columns = x.drop('obese'.columns.values.tolist()
-for c in columns:
-    k = x[c]
-    if k.dtypes == "int64":
-        values = k.unique()
-        for i in values:
-            mask = k<i
-            i_g = information_gain()
+data = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
+
+data['obese'] = (data.Index > 4).astype('int')
+data.drop('Index', axis=1, inplace=True)
+x = data.drop(['obese'], axis=1)
+y = data['obese']
+columns = data.columns.values.tolist()
+
+# for c in columns:
+#     k = x[c]
+#     if k.dtypes == "int64":
+#         values = k.unique()
+#         for i in values:
+#             mask = k < i
+#             i_g = information_gain(y, mask)
+
+
+c = x.apply(best_split, target_value=y)
+
+print(c)

@@ -360,4 +360,4 @@ def clasificar_datos(observacion, arbol):
 
 
 x = data.drop('obese',axis=1)
-clasificar_datos(x,decisiones)Index
+clasificar_datos(x,decisiones)
