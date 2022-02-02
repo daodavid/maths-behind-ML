@@ -15,7 +15,7 @@ X = data.drop('Gender',axis=1)
 X
 
 
-def entropy(X, y):
+def entropy(y):
     """
 
     """
