@@ -59,7 +59,18 @@ def best_split_value(series, y, split_type):
 
 
 def split_data(x, y, question):
-    pass
+    feature, value = list(question.split(Node.split_type))
+    if Node.split_type == '<':
+        mask = x[feature] < float(value)
+    else:
+        mask = x[feature] >= value
+
+    x_left = x[mask]
+    x_right = x[-mask]
+    y_left = y[mask]
+    y_right = y[-mask]
+
+    return x_left, y_left, x_right, y_right
 
 
 class Node:
@@ -71,38 +82,17 @@ class Node:
         self.data = None
         self.question = None
 
-    @classmethod
-    def generate_decision_node(cls, X, y):
-        """
-
-        :return: Node
-        """
-
-        node = Node()
-
-        feature, value = cls.best_split(x, y)
-        question = feature + Node.split_type + value
-        node.question = question
-        left_data, right_data = split_data(data, y, question)
-
-        node.left_interior = cls.generate_decision_node(left_data, y_left)
-        node.right_interior = cls.generate_decision_node(right_data, right_left)
-
-        return node
-
-        root = self._generate_node(X, y)
-
     @staticmethod
     def best_split(x, y):
-        k = x.apply(best_split_value, y=y, split_type=Node.split_type)
-        gini_values = k.iloc[1].values  # index 1 refers to gini values
+        k = x.apply(best_split_value, y=y.squeeze(), split_type=Node.split_type)
+        gini_values = k.iloc[1]  # index 1 refers to gini values
         max_value = gini_values.max()
         index = np.where(gini_values == max_value)[0][0]
 
         val = k.iloc[:, [index]].loc[0]
         best_value = val.values[0]
-        best_feature =val.index[0]
-        return best_feature,best_value
+        best_feature = val.index[0]
+        return best_feature, best_value
 
     def has_left_child(self):
         return True if self.left_child else False
@@ -125,11 +115,42 @@ class DecisionTree:
         self.max_depth = max_depth
         self.min_info_g = min_infromation_gain
         self.root = None
+        self.right_depth = 0;
+        self.left_depth = 0
 
     def train(self, x, y):
         verify(x, y)
+        global root_global
+        root_global = self.root
+        self.root = self.generate_decision_node(x, y)
+        print(self.root.question)
 
-        root = Node.generate_decision_node(x, y)
+    def generate_decision_node(self, x, y):
+        """
+
+        :return: Node
+        """
+
+        node = Node()
+
+        feature, value = Node.best_split(x, y)
+        question = str(feature) + Node.split_type + str(value)
+        node.question = question
+        x_left, y_left, x_right, y_right = split_data(x, y, question)
+
+        if self.max_depth and self.left_depth == self.max_depth:
+            pass
+        else:
+            self.left_depth += 1
+            node.left_interior = self.generate_decision_node(x_left, y_left)
+
+        if self.max_depth and self.right_depth == self.max_depth:
+            pass
+        else:
+            self.right_depth += 1
+            node.right_interior = self.generate_decision_node(x_right, y_right)
+
+        return node
 
     def predict(self, x):
         pass
@@ -145,11 +166,12 @@ A = np.array([1, 2, 3])
 
 data = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
 
+data.drop('Gender', axis=1, inplace=True)
 data['obese'] = (data.Index > 4).astype('int')
 data.drop('Index', axis=1, inplace=True)
 x = data.drop(['obese'], axis=1)
-y = data['obese']
+y = data[['obese']]
 
-tree = DecisionTree()
+tree = DecisionTree(max_depth=5)
 
 tree.train(x, y)
