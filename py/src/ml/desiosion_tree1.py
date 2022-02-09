@@ -8,34 +8,78 @@ right_split_type = '>='
 
 class DecisionTree:
 
-    def __init__(self, max_depht):
-        self.max_depht = max_depht
+    def __init__(self, max_depth):
+        self.max_depth = max_depth
         self.root = None
 
     def train(self, x, y):
         verify(x, y)
-        self.root = self.Node(question=None, depht=0)
+        self.root = self.Node(question=None, depth=0)
         self._append_nodes(self.root, x, y)
+        print(self.root)
+
+    def predict(self, x, y):
+
+        z = x.apply(self.calc, child=self.root, axis=1)
+        print(z)
+        # for i in range(x.shape[0]):
+        #     result = self.calc(x.iloc[i],self.root)
+        #     print(result)
+        rezult = self.accuracy(y, z)
+        print(rezult)
+
+    def accuracy(self, y, y_predict):
+        k = y.T.to_numpy()
+        c = y_predict.to_numpy()
+        d = (k == c).astype(int).sum()
+        v = k.shape[1]
+        result = d / v
+        return result
+
+    def calc(self, row, child, is_left=False):
+        question = child.question
+        if question:
+            feature, value = list(question.split(left_split_type))  # row.loc['Height']
+            is_true = row.loc[feature] < float(value)
+            if is_true:
+                return self.calc(row, child.left_child, is_left=True)
+            else:
+                return self.calc(row, child.right_child)
+        else:
+            return child.response
+
+    def _stop(self, node):
+        pass
 
     def _append_nodes(self, parent, x, y):
-        if self.max_depht <= parent.depht:
+        if self.max_depth <= parent.depth or len(x) <= 4 or len(y) <= 4:
             return
 
-        feature, value = self.best_split(x, y)
-        left_question = str(feature) + left_split_type + str(value)
-        right_question = str(feature) + right_split_type + str(value)
-        parent.left_child = self.Node(left_question, parent.depht + 1)
-        parent.right_child = self.Node(right_question, parent.depht + 1)
-        x_left, y_left, x_right, y_right = split_data(x, y, left_question)
+        feature, value = best_split(x, y)
+        question = str(feature) + left_split_type + str(value)
+        # right_question = str(feature) + right_split_type + str(value)
+        parent.question = question
+        x_left, y_left, x_right, y_right = split_data(x, y, question)
+        response_left = self._response(y_left)
+        response_right = self._response(y_right)
+        parent.left_child = self.Node(question=None, response=response_left, depth=parent.depth + 1)
+        parent.right_child = self.Node(question=None, response=response_right, depth=parent.depth + 1)
+
         self._append_nodes(parent.left_child, x_left, y_left)
         self._append_nodes(parent.right_child, x_right, y_right)
 
+    def _response(self, y):
+        number_true = y.sum()[0]
+        number_false = y.shape[0] - number_true
+        return (number_true > number_false).astype('int')
+
     class Node:
-        def __init__(self, question=None, depht=None):
+        def __init__(self, question=None, response=0, depth=0):
             self.left_child = None
             self.right_child = None
             self.question = question
-            self.depht = depht
+            self.response = response
+            self.depth = depth
 
 
 def entropy(y):
@@ -114,7 +158,7 @@ def information_gain(y, mask, func=entropy):
 
 
 def best_split(x, y):
-    k = x.apply(best_split_value, y=y.squeeze(), split_type=split_type)
+    k = x.apply(best_split_value, y=y.squeeze(), split_type=left_split_type)
 
     gini_values = k.iloc[1]  # index 1 refers to gini values
     max_value = gini_values.max()
@@ -139,3 +183,17 @@ def split_data(x, y, question):
     y_right = y[-mask]
 
     return x_left, y_left, x_right, y_right
+
+
+data = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
+
+data.drop('Gender', axis=1, inplace=True)
+data['obese'] = (data.Index > 4).astype('int')
+data.drop('Index', axis=1, inplace=True)
+x = data.drop(['obese'], axis=1)
+y = data[['obese']]
+
+tree = DecisionTree(max_depth=10)
+
+tree.train(x, y)
+tree.predict(x, y)
