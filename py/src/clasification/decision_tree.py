@@ -8,43 +8,39 @@ right_split_type = '>='
 
 class DecisionTree:
 
-    def __init__(self, max_depth):
+    def __init__(self, max_depth, min_ginni_index=0):
         self.max_depth = max_depth
         self.root = None
+        self.min_ginni_index = min_ginni_index
 
     def train(self, x, y):
         verify(x, y)
         self.root = self.Node(question=None, depth=0)
         self._append_nodes(self.root, x, y)
-        print(self.root)
+        return self.root
 
-    def predict(self, x, y):
+    def predict(self, x):
+        predict = x.apply(self._calc, child=self.root, axis=1)
+        return predict
 
-        z = x.apply(self.calc, child=self.root, axis=1)
-        print(z)
-        # for i in range(x.shape[0]):
-        #     result = self.calc(x.iloc[i],self.root)
-        #     print(result)
-        rezult = self.accuracy(y, z)
-        print(rezult)
-
-    def accuracy(self, y, y_predict):
+    @staticmethod
+    def accuracy(y, predict):
         k = y.T.to_numpy()
-        c = y_predict.to_numpy()
+        c = predict.to_numpy()
         d = (k == c).astype(int).sum()
         v = k.shape[1]
         result = d / v
         return result
 
-    def calc(self, row, child, is_left=False):
+    def _calc(self, row, child):
         question = child.question
         if question:
-            feature, value = list(question.split(left_split_type))  # row.loc['Height']
+            feature, value = list(question.split(left_split_type))
             is_true = row.loc[feature] < float(value)
             if is_true:
-                return self.calc(row, child.left_child, is_left=True)
+                return self._calc(row, child.left_child)
             else:
-                return self.calc(row, child.right_child)
+                return self._calc(row, child.right_child)
         else:
             return child.response
 
@@ -52,23 +48,19 @@ class DecisionTree:
         pass
 
     def _append_nodes(self, parent, x, y):
-        if self.max_depth <= parent.depth or len(x) <= 4 or len(y) <= 4:
+        if (not self.max_depth <= parent.depth and len(y) > 2) and not entropy(y) <= self.min_ginni_index:
+            feature, value, max_ig = best_split(x, y)
+            parent.question = str(feature) + left_split_type + str(value)
+            x_left, y_left, x_right, y_right = split_data(x, y, parent.question)
+            parent.left_child = self.Node(None, self._response(y_left), parent.depth + 1)
+            parent.right_child = self.Node(None, self._response(y_right), parent.depth + 1)
+            self._append_nodes(parent.left_child, x_left, y_left)
+            self._append_nodes(parent.right_child, x_right, y_right)
+        else:
             return
 
-        feature, value = best_split(x, y)
-        question = str(feature) + left_split_type + str(value)
-        # right_question = str(feature) + right_split_type + str(value)
-        parent.question = question
-        x_left, y_left, x_right, y_right = split_data(x, y, question)
-        response_left = self._response(y_left)
-        response_right = self._response(y_right)
-        parent.left_child = self.Node(question=None, response=response_left, depth=parent.depth + 1)
-        parent.right_child = self.Node(question=None, response=response_right, depth=parent.depth + 1)
-
-        self._append_nodes(parent.left_child, x_left, y_left)
-        self._append_nodes(parent.right_child, x_right, y_right)
-
-    def _response(self, y):
+    @staticmethod
+    def _response(y):
         number_true = y.sum()[0]
         number_false = y.shape[0] - number_true
         return (number_true > number_false).astype('int')
@@ -91,7 +83,7 @@ def entropy(y):
     """
 
     counter = collections.Counter(y)
-    p = np.array(list(counter.values())) / len(y)
+    p = y.value_counts().to_numpy() / len(y)
     return -np.sum(p * np.log2(p))
 
 
@@ -112,7 +104,7 @@ def best_split(x, y):
     val = k.iloc[:, [index]].loc[0]
     best_value = val.values[0]
     best_feature = val.index[0]
-    return best_feature, best_value
+    return best_feature, best_value, max_value
 
 
 def best_split_value(series, y, split_type):
@@ -121,14 +113,14 @@ def best_split_value(series, y, split_type):
     feature_values = []
 
     for val in values:
-        if split_type == '<=':
+        if split_type == '<':
             mask = series < val
-    else:
-        mask = series >= val
+        else:
+            mask = series >= val
 
-    i_g = information_gain(y, mask, func=entropy)
-    inf_gain_values.append(i_g)
-    feature_values.append(val)
+        i_g = information_gain(y, mask, func=entropy)
+        inf_gain_values.append(i_g)
+        feature_values.append(val)
 
     max_inf_gain = np.max(inf_gain_values)
     index = inf_gain_values.index(max_inf_gain)
@@ -151,7 +143,8 @@ def information_gain(y, mask, func=entropy):
         y_left = y[-mask]
         size = len(y)
         w_right, w_left = len(y_right) / size, len(y_left) / size
-        return entropy(y) - (w_right * entropy(y_right) + w_left * w_left)
+        information_gain = entropy(y) - (w_right * entropy(y_right) + w_left * entropy(y_left))
+        return information_gain
 
     else:
         raise TypeError("y must be a Pandas Series")
@@ -163,11 +156,15 @@ def best_split(x, y):
     gini_values = k.iloc[1]  # index 1 refers to gini values
     max_value = gini_values.max()
     index = np.where(gini_values == max_value)[0][0]
+    val = None
+    try:
+        val = k.iloc[:, [index]].loc[0]
+    except Exception:
+        print('Caught Value Exception : ' + val)
 
-    val = k.iloc[:, [index]].loc[0]
     best_value = val.values[0]
     best_feature = val.index[0]
-    return best_feature, best_value
+    return best_feature, best_value, max_value
 
 
 def split_data(x, y, question):
@@ -187,13 +184,18 @@ def split_data(x, y, question):
 
 data = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
 
-data.drop('Gender', axis=1, inplace=True)
+#data.drop('Gender', axis=1, inplace=True)
+print(data)
 data['obese'] = (data.Index > 4).astype('int')
+print(data)
 data.drop('Index', axis=1, inplace=True)
 x = data.drop(['obese'], axis=1)
+x = pd.get_dummies(x, dummy_na=True)
 y = data[['obese']]
-
+print(data)
 tree = DecisionTree(max_depth=10)
 
 tree.train(x, y)
-tree.predict(x, y)
+y_predict = tree.predict(x)
+acc = tree.accuracy(y, y_predict)
+print(acc)
