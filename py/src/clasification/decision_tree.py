@@ -88,8 +88,7 @@ def entropy(y):
 
 
 def verify(x, y):
-    if (isinstance(x, pd.DataFrame) or isinstance(x, pd.DataFrame)) and (
-            isinstance(x, pd.DataFrame) or isinstance(y, pd.Series)):
+    if (isinstance(x, pd.DataFrame) and isinstance(y, pd.DataFrame)):
         pass
     else:
         raise TypeError("x and y must be Pandas DataFrame")
@@ -182,20 +181,46 @@ def split_data(x, y, question):
     return x_left, y_left, x_right, y_right
 
 
-data = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
+# data = pd.read_csv("../../../resources/data/500_Person_Gender_Height_Weight_Index.csv")
+#
+# #data.drop('Gender', axis=1, inplace=True)
+# print(data)
+# data['obese'] = (data.Index > 4).astype('int')
+# print(data)
+# data.drop('Index', axis=1, inplace=True)
+# x = data.drop(['obese'], axis=1)
+# x = pd.get_dummies(x, dummy_na=True)
+# y = data[['obese']]
+# print(data)
+# tree = DecisionTree(max_depth=10)
+#
+# tree.train(x, y)
+# y_predict = tree.predict(x)
+# acc = tree.accuracy(y, y_predict)
+# print(acc)
+df_train = pd.read_csv("../../../resources/data/titanic/train.csv")
+df_test = pd.read_csv("../../../resources/data/titanic/test.csv")
 
-#data.drop('Gender', axis=1, inplace=True)
-print(data)
-data['obese'] = (data.Index > 4).astype('int')
-print(data)
-data.drop('Index', axis=1, inplace=True)
-x = data.drop(['obese'], axis=1)
-x = pd.get_dummies(x, dummy_na=True)
-y = data[['obese']]
-print(data)
-tree = DecisionTree(max_depth=10)
+# Store target variable of training data in a safe place
+survived_train = df_train[['Survived']]
 
-tree.train(x, y)
-y_predict = tree.predict(x)
-acc = tree.accuracy(y, y_predict)
+# Concatenate training and test sets
+data = pd.concat([df_train.drop(['Survived'], axis=1), df_test])
+
+# Dealing with missing numerical variables
+data['Age'] = data.Age.fillna(data.Age.median())
+data['Fare'] = data.Fare.fillna(data.Fare.median())
+
+data = pd.get_dummies(data, columns=['Sex'], drop_first=True)
+data = data[['Sex_male', 'Fare', 'Age', 'Pclass', 'SibSp']]
+
+# split it back into training and test sets
+data_train = data.iloc[:891]
+data_test = data.iloc[891:]
+
+tree = DecisionTree(max_depth=30)
+
+tree.train(data_train, survived_train)
+y_predict = tree.predict(data_train)
+acc = tree.accuracy(survived_train, y_predict)
 print(acc)

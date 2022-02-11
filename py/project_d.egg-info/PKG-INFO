@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: project-d
+Version: 1.0
+Summary: Tool to share
+Home-page: https://github.com/private_directory
+Author: Me
+Author-email: my_email@place.org
+License: GNU
+Description: This is a simple example package. You can use
+        [Github-flavored Markdown](https://github.com/daodavid/maths-behind-ML/)
+        to write your content.
+Platform: UNKNOWN
+Requires-Python: >=3
+Description-Content-Type: text/markdown
