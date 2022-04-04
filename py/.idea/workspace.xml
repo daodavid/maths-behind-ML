@@ -9,8 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f277b29e-2201-482b-b5be-bbb86ab1d095" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bagging/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bagging/bagging_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/src/clasification/decision_tree.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
+              <caret line="226" selection-start-line="226" selection-end-line="226" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -36,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/bagging/bagging_learning.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="365">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -780,7 +779,7 @@
     <entry file="file://$PROJECT_DIR$/src/clasification/decision_tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -790,7 +789,7 @@
     <entry file="file://$PROJECT_DIR$/bagging/bagging_learning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
