@@ -1,0 +1,16 @@
+# Top-level packages used by the notebooks.
+# Prefer `uv sync` (see pyproject.toml / uv.lock). This file is for pip:
+#   python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+scipy
+matplotlib-venn
+category-encoders
+jupyter
+ipykernel
+ipython
+nbformat

@@ -1,2 +1,18 @@
-### ingnore all jupiter caches
+### Jupyter
 .ipynb_checkpoints
+
+### Python / UV
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.uv/
+
+### Environment
+.env
+.env.*

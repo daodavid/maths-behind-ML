@@ -1,4 +1,30 @@
-<h1 face = "Times New Roma" color='#3f134f'> Machine Learning </h1>   
+<h1 face = "Times New Roma" color='#3f134f'> Machine Learning </h1>
+
+## Setup
+
+This project uses [uv](https://docs.astral.sh/uv/) for the Python environment.
+
+```bash
+# Install uv: https://docs.astral.sh/uv/getting-started/installation/
+uv sync
+uv run jupyter notebook
+```
+
+Pip alternative:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+jupyter notebook
+```
+
+Optional extras:
+
+```bash
+uv sync --extra nlp        # spaCy, used by notebooks in nlp/
+```
+ 
 
 <h2>Maths</h2>
    <ul size="2">
