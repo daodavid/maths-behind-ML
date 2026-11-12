@@ -3,6 +3,22 @@
  <br> <br>
 <h2>
    <font size="5" face = "Times New Roma" color='#270336'>
+     Foundations of Probability
+   </font> 
+ </h2>
+
+ <font face = "Times New Roma" size="3"  color='#270336' >
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Sample space, events, Kolmogorov axioms, and theoretical vs empirical probability (fair coin with NumPy).
+</font>  <br> <br>
+
+  <font size="2" face = "Times New Roma" color='#3f134f' > 
+    <ul style="margin-left: 30px">
+      <li><a href='Foundations of Probability.ipynb'>Foundations of Probability</a></li><br>
+    </ul>
+  </font>
+
+<h2>
+   <font size="5" face = "Times New Roma" color='#270336'>
      Probability basics
    </font> 
  </h2>

@@ -30,7 +30,11 @@ uv sync --extra nlp        # spaCy, used by notebooks in nlp/
    <ul size="2">
             <li><a  href='/notebooks/Math/Linear Algebra'>Linear Algebra- in Progress</a> </li>
              <li><a  href='/notebooks/Math/Mathematical analysis'>Mathematical Analysis - in Progress</a> </li>    
-             <li><a  href='/notebooks/Math/Probability and Statistic/'>Probability and Statistic - in Progress</a> </li>
+             <li><a  href='/notebooks/Math/Probability and Statistic/'>Probability and Statistic - in Progress</a>
+               <ul>
+                 <li><a href='/notebooks/Math/Probability and Statistic/Foundations of Probability.ipynb'>Foundations of Probability</a></li>
+               </ul>
+             </li>
    </ul>  
 
 <h2>ML</h2>
